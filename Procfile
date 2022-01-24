@@ -1,1 +1,1 @@
-web: web: yarn install && yarn serve
+web: yarn install && yarn serve
