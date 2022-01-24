@@ -20,7 +20,7 @@
           <a type="button">Alphabétique</a>
         </div>
       </div>
-      <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; width: 100%; height: 100%">
+      <div v-if="filterThematics.length > 0" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; width: 100%; height: 100%">
         <div v-for="(author, i) in filterThematics" :key="i" class="author_card">
           <div class="row">
             <span class="card_title">Prenom: </span>
@@ -39,6 +39,9 @@
             <p :style="[ author.nb_likes === 'non trouvé' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.nb_likes}}</p>
           </div>
         </div>
+      </div>
+      <div v-else style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; width: 100%; height: 100%">
+        <h3>Aucun Auteur trouvé.</h3>
       </div>
     </div>
   </div>
