@@ -175,7 +175,7 @@ export default {
     font-size: 15px;
   }
   .btn_submit:active {
-    opacity: 50%
+    opacity: 50%;
   }
   .btn_submit:hover {
     color: #41ba82;
