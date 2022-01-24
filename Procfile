@@ -1,1 +1,1 @@
-web: yarn install && yarn serve
+web: yarn install && node server.js
