@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Auteurs</router-link> |
     <router-link to="/form-inscription">Inscription</router-link> |
-    <router-link to="/accounts">Accounts</router-link>
+    <router-link to="/accounts">Comptes</router-link>
   </div>
   <router-view/>
 </template>

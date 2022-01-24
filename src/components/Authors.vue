@@ -1,42 +1,42 @@
 <template>
   <div class="hello">
     <div style="width: 100%; min-height: 400px; background-color: lightgrey; border-radius: 4px">
-      <h1 class="title">Authors</h1>
-      <h1>Thematics</h1>
+      <h1 class="title">Auteurs</h1>
+      <h1>Thématiques</h1>
         <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin: 30px 0px">
           <div @click="handlefilterThematics(thematic)" v-for="(thematic, i) in getThematics" :key="i" class="btn-filter">
             <a type="button">{{thematic}}</a>
           </div>
         </div>
-      <h1>Other filters</h1>
+      <h1>Autres filtres</h1>
       <div style="display: flex; flex-direction: row; justify-content: center; width: 100%; margin: 30px 0px">
         <div @click="getAllAuthors()" class="btn-filter">
-          <a type="button">All</a>
+          <a type="button">Tout</a>
         </div>
         <div @click="filterByLikes()" class="btn-filter">
           <a type="button">Likes</a>
         </div>
         <div @click="filterByAlphabeticOrder()" class="btn-filter">
-          <a type="button">Alphabetic</a>
+          <a type="button">Alphabétique</a>
         </div>
       </div>
       <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; width: 100%; height: 100%">
         <div v-for="(author, i) in filterThematics" :key="i" class="author_card">
           <div class="row">
-            <span class="card_title">First Name: </span>
-            <p :style="[ author.first_name === 'not found' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.first_name}}</p>
+            <span class="card_title">Prenom: </span>
+            <p :style="[ author.first_name === 'non trouvé' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.first_name}}</p>
           </div>
           <div class="row">
-            <span class="card_title">Last Name: </span>
-            <p :style="[ author.last_name === 'not found' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.last_name}}</p>
+            <span class="card_title">Nom: </span>
+            <p :style="[ author.last_name === 'non trouvé' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.last_name}}</p>
           </div>
           <div class="row">
-            <span class="card_title">Thematic: </span>
-            <p :style="[ author.thematic === 'not found' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.thematic}}</p>
+            <span class="card_title">Thématique: </span>
+            <p :style="[ author.thematic === 'non trouvé' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.thematic}}</p>
           </div>
           <div class="row">
-            <span class="card_title">Number of Likes: </span>
-            <p :style="[ author.nb_likes === 'not found' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.nb_likes}}</p>
+            <span class="card_title">Numero de Likes: </span>
+            <p :style="[ author.nb_likes === 'non trouvé' ? {color: 'crimson'} : {color: null}, {fontWeight: 'bold'}]">{{author?.nb_likes}}</p>
           </div>
         </div>
       </div>
@@ -50,9 +50,8 @@ import thematics from '../assets/thematics.json'
 import authors from '../assets/authors.json'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Accounts',
   props: {
-    msg: String
   },
   data () {
     return {
@@ -67,13 +66,13 @@ export default {
   mounted () {
     this.authors.forEach((author, i) => {
       if (author.first_name === null) {
-        author.first_name = 'not found'
+        author.first_name = 'non trouvé'
       } else if (author.last_name === null) {
-        author.last_name = 'not found'
+        author.last_name = 'non trouvé'
       } else if (author.thematic === null) {
-        author.thematic = 'not found'
+        author.thematic = 'non trouvé'
       } else if (author.nb_likes === null) {
-        author.nb_likes = 'not found'
+        author.nb_likes = 'non trouvé'
       }
     })
   },
@@ -98,7 +97,7 @@ export default {
     //   // }
     // },
     filterColor (author) {
-      return author?.nb_likes === 'not found' ? 'red' : 'black'
+      return author?.nb_likes === 'non trouvé' ? 'red' : 'black'
     },
     getAllAuthors () {
       this.thematic = undefined
@@ -121,7 +120,7 @@ export default {
       var arrayNbLikesFound = []
       var arrayNbLikesNotFound = []
       this.filteredAuthors.forEach((author, i) => {
-        if (author.nb_likes !== 'not found') {
+        if (author.nb_likes !== 'non trouvé') {
           arrayNbLikesFound.push(author)
         } else {
           arrayNbLikesNotFound.push(author)
@@ -176,7 +175,7 @@ export default {
     //   var arrayNbLikesFound = []
     //   var arrayNbLikesNotFound = []
     //   this.filteredAuthors.forEach((author, i) => {
-    //     if (author.nb_likes !== 'not found') {
+    //     if (author.nb_likes !== 'non trouvé') {
     //       arrayNbLikesFound.push(author)
     //     } else {
     //       arrayNbLikesNotFound.push(author)
@@ -217,9 +216,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 5px;
   }
   .btn-filter:active {
     opacity: 50%;
+  }
+  .btn-filter:hover {
+    color: #41ba82;
+    background-color: #2c3e50;
   }
   .title {
     border-radius: 4px 4px 0px 0px;

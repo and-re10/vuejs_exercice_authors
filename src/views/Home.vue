@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <h1 v-for="account in $store.state.accounts" :key="account.id">Counter {{account}}</h1> -->
-    <Authors msg="Welcome to Your Vue.js App"/>
+    <Authors/>
   </div>
 </template>
 

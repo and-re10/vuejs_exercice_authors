@@ -6,13 +6,13 @@
     </div>
     <form @submit.prevent="addAccount()" class="contact-container">
         <div class="form-group w-80">
-          <label for="">First Name*</label>
+          <label for="">Prenom*</label>
           <input type="text"
             class="form-control w-100" v-model="account.first_name" name="" id="" aria-describedby="helpId" placeholder="">
           <small class="error_msg" v-if="account.first_name === undefined">{{filterFormError ("first_name")}}</small>
         </div>
         <div class="form-group w-80">
-          <label for="">Last Name*</label>
+          <label for="">Nom*</label>
           <input type="text"
             class="form-control w-100" name="" v-model="account.last_name" id="" aria-describedby="helpId" placeholder="">
           <small class="error_msg" v-if="account.last_name === undefined">{{filterFormError ("last_name")}}</small>
@@ -24,14 +24,14 @@
         <small class="error_msg" v-if="account.email === undefined">{{filterFormError ("email")}}</small>
       </div>
       <div class="form-group w-80">
-        <label for="">Phone*</label>
+        <label for="">Numero de Telephone*</label>
         <input type="text"
           class="form-control w-100" name="" v-model="account.phone" id="" aria-describedby="helpId" placeholder="">
         <small class="error_msg" v-if="account.phone === undefined">{{filterFormError ("phone")}}</small>
       </div>
-      <button class="btn_submit">Adicionar</button>
+      <button class="btn_submit">Enregistrer</button>
     </form>
-    <span v-if="successMsg" style="color: #41ba82; font-weight: bold; margin: 20px 0px">Form was submitted</span>
+    <span v-if="successMsg" style="color: #41ba82; font-weight: bold; margin: 20px 0px">Le compte a ete enregistrer</span>
   </div>
 </template>
 
@@ -54,19 +54,19 @@ export default {
       formError: [
         {
           name: 'first_name',
-          msg: 'First Name required.'
+          msg: 'Prenom est requis.'
         },
         {
           name: 'last_name',
-          msg: 'Last Name required.'
+          msg: 'Nom est requis.'
         },
         {
           name: 'email',
-          msg: 'Email required.'
+          msg: 'Email est requis.'
         },
         {
           name: 'phone',
-          msg: 'Phone required.'
+          msg: 'Numero de telephone est requis.'
         }
       ]
     }
@@ -171,9 +171,15 @@ export default {
     border: 2px solid lightgrey;
     border-radius: 8px;
     margin-top: 20px;
+    font-weight: bold;
+    font-size: 15px;
   }
   .btn_submit:active {
-    opacity: 70%
+    opacity: 50%
+  }
+  .btn_submit:hover {
+    color: #41ba82;
+    background-color: #2c3e50;
   }
   .w-100 {
     width: 100%;
