@@ -1,0 +1,62 @@
+[
+    {
+        "first_name": "Jean",
+        "last_name": "Dupont",
+        "thematic": "agriculture",
+        "nb_likes": 13
+    },
+    {
+        "first_name": "Marie",
+        "last_name": "Dupuis",
+        "thematic": "ecologie",
+        "nb_likes": null
+    },
+    {
+        "first_name": "Martin",
+        "last_name": "Moreau",
+        "thematic": "transport",
+        "nb_likes": 0
+    },
+    {
+        "first_name": "Élise",
+        "last_name": "Louis",
+        "thematic": null,
+        "nb_likes": 2
+    },
+    {
+        "first_name": "Louise",
+        "last_name": "Lepoutre",
+        "thematic": "economie",
+        "nb_likes": 4
+    },
+    {
+        "first_name": "Heliodore",
+        "last_name": "Giroux",
+        "thematic": "ecologie",
+        "nb_likes": null
+    },
+    {
+        "first_name": "Juliette",
+        "last_name": "Tondu",
+        "thematic": "transport",
+        "nb_likes": 3
+    },
+    {
+        "first_name": "Regis",
+        "last_name": "Puy",
+        "thematic": "environnement",
+        "nb_likes": 9
+    },
+    {
+        "first_name": "Veronique",
+        "last_name": "Houyoux",
+        "thematic": "energie",
+        "nb_likes": 12
+    },
+    {
+        "first_name": "Julien",
+        "last_name": "Roux",
+        "thematic": null,
+        "nb_likes": 7
+    }
+]
