@@ -2,7 +2,7 @@
   <div id="nav">
     <router-link to="/">Auteurs</router-link> |
     <router-link to="/form-inscription">Inscription</router-link> |
-    <router-link to="/accounts">Comptes</router-link>
+    <router-link to="/accounts">Comptes ({{$store.state.accounts.length}})</router-link>
   </div>
   <router-view/>
 </template>
